@@ -1,4 +1,4 @@
-package fr.zakyotsu.dyskord.personSelector;
+package fr.zakyotsu.dyskord.usersView;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -9,18 +9,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import fr.zakyotsu.dyskord.R;
-import fr.zakyotsu.dyskord.personSelector.PersonViewAdapter;
+import fr.zakyotsu.dyskord.utils.Requests;
 
 public class SelectActivity extends AppCompatActivity {
 
-    private String etpID, username = "";
+    private String id, username = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
 
-        etpID = getIntent().getStringExtra("etpID");
+        id = getIntent().getStringExtra("id");
         username = getIntent().getStringExtra("username");
 
         updatePeopleList();
@@ -30,9 +30,14 @@ public class SelectActivity extends AppCompatActivity {
         TextView usernameLabel = findViewById(R.id.usernameLabel);
         usernameLabel.setText("Connecté(e) en tant que: " + username);
 
-        RecyclerView personView = findViewById(R.id.personView);
-        personView.addItemDecoration(new DividerItemDecoration(this.getApplicationContext(), LinearLayoutManager.VERTICAL));
-        personView.setAdapter(new PersonViewAdapter(agence.getProducts()));
+
+        Requests.getAllUsers(id, response -> {
+            RecyclerView personView = findViewById(R.id.personView);
+            personView.addItemDecoration(new DividerItemDecoration(this.getApplicationContext(), LinearLayoutManager.VERTICAL));
+            personView.setAdapter(new UsersViewAdapter(response));
+        });
+
+
 
     }
 

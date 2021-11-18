@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".personSelector.SelectActivity"
+            android:name=".usersView.SelectActivity"
             android:exported="false">
         </activity>
     </application>

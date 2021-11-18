@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Katarina/AndroidStudioProjects/dyskord/app/src/main/res/layout/activity_select.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/Katarina/AndroidStudioProjects/dyskord/app/src/main/res/layout/fragment_item.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/Katarina/AndroidStudioProjects/dyskord/app/src/main/res/layout/users_view_item.xml" value="0.709211986681465" />
+        <entry key="..\:/Users/Katarina/AndroidStudioProjects/dyskord/app/src/main/res/layout/usersview_item.xml" value="0.19895833333333332" />
         <entry key="..\:/Users/Zakyotsu/AndroidStudioProjects/Dyskord/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/Zakyotsu/AndroidStudioProjects/Dyskord/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Users/Zakyotsu/AndroidStudioProjects/Dyskord/app/src/main/res/layout/activity_message.xml" value="0.4" />
