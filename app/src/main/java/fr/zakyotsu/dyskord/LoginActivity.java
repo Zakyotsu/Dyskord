@@ -2,6 +2,7 @@ package fr.zakyotsu.dyskord;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,16 +14,22 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import fr.zakyotsu.dyskord.usersView.SelectActivity;
+import fr.zakyotsu.dyskord.gcView.GroupChatActivity;
 import fr.zakyotsu.dyskord.utils.Requests;
 
 public class LoginActivity extends AppCompatActivity {
+
+    private volatile static Context context;
+    public static int USER_ID;
+    public static String USER_NAME;
+    public static String DISPLAY_NAME;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        LoginActivity.context = getApplicationContext();
         Requests.resQueue = Volley.newRequestQueue(this);
     }
 
@@ -35,20 +42,22 @@ public class LoginActivity extends AppCompatActivity {
                 JSONObject obj = new JSONObject(response);
 
                 if(obj.getBoolean("response")) {
-                    Toast.makeText(this, "Connection effectuée !", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(this, SelectActivity.class);
-                    intent.putExtra("id", obj.getString("id"));
-                    intent.putExtra("username", username);
+                    Toast.makeText(this, getString(R.string.connection_success), Toast.LENGTH_SHORT).show();
+
+                    USER_ID = obj.getInt("id");
+                    USER_NAME = username;
+                    DISPLAY_NAME = obj.getString("displayname");
+                    Intent intent = new Intent(this, GroupChatActivity.class);
                     startActivity(intent);
-                } else {
-                    Toast.makeText(this, "Nom d'utilisateur et/ou mot de passe erroné.", Toast.LENGTH_SHORT).show();
-                }
+
+                } else Toast.makeText(this, getString(R.string.connection_failure), Toast.LENGTH_SHORT).show();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         });
     }
 
-
-
+    public static Context getAppContext() {
+        return LoginActivity.context;
+    }
 }

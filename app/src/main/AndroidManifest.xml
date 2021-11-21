@@ -12,17 +12,23 @@
         android:theme="@style/Theme.Dyskord">
         <activity
             android:name=".LoginActivity"
-            android:exported="true">
+            android:exported="true"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".usersView.SelectActivity"
+            android:name=".gcView.GroupChatActivity"
             android:exported="false">
         </activity>
-    </application>
 
+        <activity
+            android:name=".messages.MessageActivity"
+            android:exported="false">
+        </activity>
+
+    </application>
 </manifest>

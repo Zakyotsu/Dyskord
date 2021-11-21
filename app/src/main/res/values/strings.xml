@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Dyskord</string>
-
+    <string name="connected_as">Connecté(e) en tant que : %usn</string>
+    <string name="connection_success">Connection effectuée !</string>
+    <string name="connection_failure">Nom d\'utilisateur et/ou mot de passe erroné.</string>
+    <string name="login_button">Se connecter</string>
+    <string name="stay_online">Rester connecté</string>
+    <string name="password">Mot de passe</string>
+    <string name="username">Nom d\'utilisateur</string>
+    <string name="add_gc">Créer un chat de groupe, ou un chat DM</string>
 </resources>
