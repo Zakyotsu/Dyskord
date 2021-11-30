@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Katarina/AndroidStudioProjects/dyskord/app/src/main/res/layout/activity_groupchat.xml" value="0.3625" />
         <entry key="..\:/Users/Katarina/AndroidStudioProjects/dyskord/app/src/main/res/layout/activity_login.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/Katarina/AndroidStudioProjects/dyskord/app/src/main/res/layout/activity_messages.xml" value="0.3625" />
         <entry key="..\:/Users/Katarina/AndroidStudioProjects/dyskord/app/src/main/res/layout/activity_select.xml" value="0.2280593325092707" />
         <entry key="..\:/Users/Katarina/AndroidStudioProjects/dyskord/app/src/main/res/layout/fragment_item.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/Katarina/AndroidStudioProjects/dyskord/app/src/main/res/layout/groupchat_view_item.xml" value="0.3625" />
+        <entry key="..\:/Users/Katarina/AndroidStudioProjects/dyskord/app/src/main/res/layout/messages_view_item.xml" value="0.75" />
+        <entry key="..\:/Users/Katarina/AndroidStudioProjects/dyskord/app/src/main/res/layout/slide_left.xml" value="0.17708333333333334" />
         <entry key="..\:/Users/Katarina/AndroidStudioProjects/dyskord/app/src/main/res/layout/users_view_item.xml" value="0.709211986681465" />
         <entry key="..\:/Users/Katarina/AndroidStudioProjects/dyskord/app/src/main/res/layout/usersview_item.xml" value="0.19895833333333332" />
         <entry key="..\:/Users/Zakyotsu/AndroidStudioProjects/Dyskord/app/src/main/res/layout/activity_login.xml" value="0.2" />

@@ -19,23 +19,14 @@ public class GroupChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_groupchat);
 
-        updatePeopleList();
-    }
 
-    private void updatePeopleList() {
-        TextView usernameLabel = findViewById(R.id.usernameLabel);
+        TextView usernameLabel = findViewById(R.id.chatViewCurrentUser);
         usernameLabel.setText(getString(R.string.connected_as).replaceAll("%usn", LoginActivity.DISPLAY_NAME + " (" + LoginActivity.USER_NAME + ")"));
 
-
         Requests.getGroupsFromUser(LoginActivity.USER_ID, response -> {
-            RecyclerView personView = findViewById(R.id.personView);
+            RecyclerView personView = findViewById(R.id.chatViewRecyclerView);
             personView.addItemDecoration(new DividerItemDecoration(this.getApplicationContext(), LinearLayoutManager.VERTICAL));
-            personView.setAdapter(new GroupChatAdapter(response));
+            personView.setAdapter(new GroupChatAdapter(response, this));
         });
-
-
-
     }
-
-
 }

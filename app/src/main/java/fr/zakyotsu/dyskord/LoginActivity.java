@@ -19,7 +19,6 @@ import fr.zakyotsu.dyskord.utils.Requests;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private volatile static Context context;
     public static int USER_ID;
     public static String USER_NAME;
     public static String DISPLAY_NAME;
@@ -29,7 +28,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        LoginActivity.context = getApplicationContext();
         Requests.resQueue = Volley.newRequestQueue(this);
     }
 
@@ -55,9 +53,5 @@ public class LoginActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         });
-    }
-
-    public static Context getAppContext() {
-        return LoginActivity.context;
     }
 }

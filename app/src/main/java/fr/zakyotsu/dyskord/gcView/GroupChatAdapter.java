@@ -1,9 +1,14 @@
 package fr.zakyotsu.dyskord.gcView;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.json.JSONArray;
@@ -12,12 +17,15 @@ import org.json.JSONObject;
 
 import fr.zakyotsu.dyskord.LoginActivity;
 import fr.zakyotsu.dyskord.R;
+import fr.zakyotsu.dyskord.messagesView.MessagesActivity;
 
-public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatItemHolder> {
+public class GroupChatAdapter extends RecyclerView.Adapter<ItemHolder> implements View.OnClickListener {
 
     private JSONArray groups;
+    private final GroupChatActivity gca;
 
-    public GroupChatAdapter(String response) {
+    public GroupChatAdapter(String response, GroupChatActivity gca) {
+        this.gca = gca;
         try {
             this.groups = new JSONArray(response);
         } catch (JSONException e) {
@@ -25,31 +33,26 @@ public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatItemHolder> 
         }
     }
 
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(gca.getApplicationContext(), MessagesActivity.class);
+        intent.putExtra("groupID", ((TextView) v.findViewById(R.id.chatViewID)).getText());
+        intent.putExtra("chatTo", ((TextView) v.findViewById(R.id.chatViewGroupName)).getText());
+        gca.startActivity(intent);
+    }
+
     @NonNull
     @Override
-    public GroupChatItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new GroupChatItemHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.users_view_item, parent, false));
+    public ItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new ItemHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.groupchat_view_item, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull GroupChatItemHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ItemHolder holder, int position) {
+        holder.chatViewItem.setOnClickListener(this);
         try {
             JSONObject obj = groups.getJSONObject(position);
-
-
             JSONArray members = obj.getJSONArray("group_members");
-
-            /*String membersString = "";
-            for(int i = 0; i < members.length(); i++) {
-                JSONObject member = members.getJSONObject(i);
-                if(member.getInt("id") == LoginActivity.USER_ID) continue;
-
-                membersString += member.getString("displayname");
-
-                if(i != members.length() - 1) {
-                    membersString += ", ";
-                }
-            }*/
 
             //If more than 2 members, then its a group, not a DM.
             boolean isDM = true;
@@ -76,6 +79,20 @@ public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatItemHolder> 
     @Override
     public int getItemCount() {
         return groups.length();
+    }
+}
+class ItemHolder extends RecyclerView.ViewHolder {
+
+    public TextView chatViewNameLabel, chatViewIDLabel;
+    public ImageView chatViewImage;
+    public ConstraintLayout chatViewItem;
+
+    public ItemHolder(@NonNull View itemView) {
+        super(itemView);
+        chatViewNameLabel = itemView.findViewById(R.id.chatViewGroupName);
+        chatViewIDLabel = itemView.findViewById(R.id.chatViewID);
+        chatViewImage = itemView.findViewById(R.id.chatViewImage);
+        chatViewItem = itemView.findViewById(R.id.chatViewItem);
     }
 }
 
