@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.zakyotsu.dyskord">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Dyskord">
+        android:theme="@style/Theme.Dyskord"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.auth.LoginActivity"
             android:exported="true"
             android:noHistory="false">
             <intent-filter>
@@ -21,14 +22,12 @@
         </activity>
 
         <activity
-            android:name=".gcView.GroupChatActivity"
+            android:name=".ui.groupchat.GroupChatActivity"
             android:exported="false">
         </activity>
-
         <activity
-            android:name=".messagesView.MessagesActivity"
+            android:name=".ui.messages.MessagesActivity"
             android:exported="false">
         </activity>
-
     </application>
 </manifest>

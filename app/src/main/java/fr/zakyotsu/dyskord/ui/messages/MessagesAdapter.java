@@ -1,4 +1,4 @@
-package fr.zakyotsu.dyskord.messagesView;
+package fr.zakyotsu.dyskord.ui.messages;
 
 import android.view.LayoutInflater;
 import android.view.View;

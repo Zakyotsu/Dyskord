@@ -1,4 +1,4 @@
-package fr.zakyotsu.dyskord.gcView;
+package fr.zakyotsu.dyskord.ui.groupchat;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -15,9 +15,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import fr.zakyotsu.dyskord.LoginActivity;
+import fr.zakyotsu.dyskord.ui.auth.LoginActivity;
 import fr.zakyotsu.dyskord.R;
-import fr.zakyotsu.dyskord.messagesView.MessagesActivity;
+import fr.zakyotsu.dyskord.ui.messages.MessagesActivity;
 
 public class GroupChatAdapter extends RecyclerView.Adapter<ItemHolder> implements View.OnClickListener {
 

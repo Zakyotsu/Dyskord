@@ -1,4 +1,4 @@
-package fr.zakyotsu.dyskord.gcView;
+package fr.zakyotsu.dyskord.ui.groupchat;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import fr.zakyotsu.dyskord.LoginActivity;
+import fr.zakyotsu.dyskord.ui.auth.LoginActivity;
 import fr.zakyotsu.dyskord.R;
 import fr.zakyotsu.dyskord.utils.Requests;
 

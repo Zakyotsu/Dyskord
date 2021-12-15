@@ -1,11 +1,29 @@
 <resources>
     <string name="app_name">Dyskord</string>
+
+    <string name="no_account">Pas encore de compte ?</string>
+    <string name="register">S\'enregistrer</string>
+    <string name="confirm_password">Confirmer le mot de passe</string>
+    <string name="display_name">Nom d\'utilisateur</string>
+
     <string name="connected_as">Connecté(e) en tant que : %usn</string>
-    <string name="connection_success">Connection effectuée !</string>
-    <string name="connection_failure">Nom d\'utilisateur et/ou mot de passe erroné.</string>
+    <string name="validate">Valider</string>
     <string name="login_button">Se connecter</string>
-    <string name="stay_online">Rester connecté</string>
+    <string name="username">Identifiant de connexion</string>
     <string name="password">Mot de passe</string>
-    <string name="username">Nom d\'utilisateur</string>
+    <string name="password_forgot">Mot de passe oublié ?</string>
+
+    <string name="auth_success">Connection effectuée !</string>
+    <string name="auth_failure">Nom d\'utilisateur et/ou mot de passe incorrect(s).</string>
+
+
     <string name="add_gc">Créer un chat de groupe, ou un chat DM</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 </resources>
